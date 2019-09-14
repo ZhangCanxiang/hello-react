@@ -67,6 +67,12 @@ export default class BasicTable extends React.Component{
             },
         ]
 
+        dataSource.map((item,index)=>{
+            item.index=index;
+        })
+        
+
+
         this.setState({
             dataSource
         })
@@ -87,7 +93,9 @@ export default class BasicTable extends React.Component{
         }).then((res)=>{
             console.log(res);
             if(res.code ==='0'){
-                
+                res.result.map((item, index)=>{
+                    item.index = index
+                })
                 this.setState({
                     dataSource2:res.result
                 })
@@ -166,6 +174,10 @@ export default class BasicTable extends React.Component{
             }
 
          ];
+         const rowSelection= {
+            type:'checkbox'
+        };
+
         return (
             <div>
                 <Card>
@@ -189,6 +201,18 @@ export default class BasicTable extends React.Component{
                 
                 </Table>
             </Card>
+
+                <Card title="Mock-sigle-select" style={{margin:'10px 0'}}>
+                    <Table 
+                        bordered
+                        
+                        columns={columns}
+                        dataSource={this.state.dataSource2}
+                        pagination={false}
+                    >
+                    
+                    </Table>
+                </Card>
             </div>
         )
     }
