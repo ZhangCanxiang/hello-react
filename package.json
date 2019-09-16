@@ -47,7 +47,7 @@
     "postcss-preset-env": "6.6.0",
     "postcss-safe-parser": "4.0.1",
     "react": "^16.8.6",
-    "react-app-polyfill": "^1.0.1",
+    "react-app-polyfill": "^1.0.2",
     "react-dev-utils": "^9.0.1",
     "react-dom": "^16.8.6",
     "react-router-dom": "^5.0.1",
@@ -55,12 +55,14 @@
     "resolve": "1.10.0",
     "sass-loader": "7.1.0",
     "semver": "6.0.0",
+    "socket.io-client": "^2.2.0",
     "style-loader": "0.23.1",
     "terser-webpack-plugin": "1.2.3",
     "ts-pnp": "1.1.2",
     "url-loader": "1.1.2",
     "webpack-dev-server": "3.2.1",
     "webpack-manifest-plugin": "2.0.4",
+    "websocket": "^1.0.30",
     "workbox-webpack-plugin": "4.2.0"
   },
   "scripts": {
@@ -75,12 +77,14 @@
     "production": [
       ">0.2%",
       "not dead",
-      "not op_mini all"
+      "not op_mini all",
+      "ie 11"
     ],
     "development": [
       "last 1 chrome version",
       "last 1 firefox version",
-      "last 1 safari version"
+      "last 1 safari version",
+      "ie 11"
     ]
   },
   "jest": {

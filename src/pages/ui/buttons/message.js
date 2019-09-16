@@ -27,6 +27,7 @@ export default class Message extends React.Component{
                  }>cn</Button>
                  <Button type="primary" onClick={()=>send('loading')}>sd</Button>
 
+            
                 </Card>
             </div>
         )

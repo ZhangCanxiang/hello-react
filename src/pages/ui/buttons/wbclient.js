@@ -1,4 +1,3 @@
-import ReconnectingWebSocket from "reconnecting-websocket";
 let websocket = null;
 
 const initwebsocket=(path)=>{
@@ -8,9 +7,9 @@ const initwebsocket=(path)=>{
     }
 
     //browser supports WebSocket
-    if ('WebSocket' in window) {
+    if (window.WebSocket) {
                 // Method of Transferring Parameters through Path
-        websocket = new ReconnectingWebSocket(path);
+        websocket = new WebSocket(path);
 
     }
     else {
@@ -24,4 +23,5 @@ const initwebsocket=(path)=>{
 const send=(message)=> {
     websocket.send(message);
 }
+
 export {initwebsocket,send}
